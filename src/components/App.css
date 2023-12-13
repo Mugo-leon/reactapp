@@ -1,0 +1,21 @@
+
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode label {
+  color: #fff;
+}
+
+.dark-mode p {
+  color: #fff;
+}
+
