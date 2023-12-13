@@ -13,15 +13,7 @@ const App = () => {
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
       <DarkModeToggle isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeChange} />
-      {immunizationData ? (
-        <>
           <Header isLoggedIn={true} />
-          <ChildAgeSelector onSelect={(age) => setSelectedAge(age)} />
-          <ImmunizationDisplay selectedAge={selectedAge} immunizationData={immunizationData} />
-        </>
-      ) : (
-        <p>Loading immunization data...</p>
-      )}
     </div>
   );
 };
