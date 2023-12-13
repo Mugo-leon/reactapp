@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
-import './App.css';
-
+import Header from "./Header";
 import DarkModeToggle from './DarkModeToggle';
-
-
+import './App.css';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -16,38 +13,15 @@ const App = () => {
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
       <DarkModeToggle isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeChange} />
-      
-        
-=======
-import React, { useState, useEffect } from 'react';
-
-import Header from "./Header";
-
-
-const App = () => {
-  
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:3000/Immunizations');
-  //       const data = await response.json();
-  //       setImmunizationData(data);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-
-  return (
-    <div >
-  
-
+      {immunizationData ? (
+        <>
           <Header isLoggedIn={true} />
->>>>>>> origin/development
-      
+          <ChildAgeSelector onSelect={(age) => setSelectedAge(age)} />
+          <ImmunizationDisplay selectedAge={selectedAge} immunizationData={immunizationData} />
+        </>
+      ) : (
+        <p>Loading immunization data...</p>
+      )}
     </div>
   );
 };
