@@ -1,33 +1,13 @@
-import React, { useState, useEffect } from 'react';
 
-import Header from "./Header";
-
+import React from 'react';
+import ChildAgeSelector from './ChildAgeSelector';
 
 const App = () => {
-  
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:3000/Immunizations');
-  //       const data = await response.json();
-  //       setImmunizationData(data);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
 
   return (
-    <div >
-  
-
-          <Header isLoggedIn={true} />
-      
-    </div>
-  );
-};
+    <div>
+        <>
+          <ChildAgeSelector onSelect={(age) => (age)} />
+        </>
 
 export default App;
