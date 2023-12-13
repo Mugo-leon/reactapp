@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ChildAgeSelector from './ChildAgeSelector';
 
@@ -8,18 +9,5 @@ const App = () => {
         <>
           <ChildAgeSelector onSelect={(age) => (age)} />
         </>
-    </div>
-  );
-};
 
 export default App;
-
-
-
-
-
-
-
-
-
-
