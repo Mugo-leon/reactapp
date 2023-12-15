@@ -1,9 +1,10 @@
-
-
+/* App.css */
 
 body {
   font-family: 'Arial', sans-serif;
   transition: background-color 0.5s, color 0.5s;
+  background-image: url(/Users/winnie/reactapp/src/components/baby.png);
+  background-size: auto;
 }
 
 .dark-mode {
@@ -19,3 +20,91 @@ body {
   color: #fff;
 }
 
+#enterButton {
+color: #fff;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 20px;
+background-color: gray;
+}
+#welcome {
+background: rgba(199, 193, 193, 0.68) ;
+background-size: cover;
+display: grid;
+justify-content: center;
+align-items: center;
+border-radius: 20px;
+}
+/* Add additional styles as needed */
+h1 {
+padding: 1rem;
+text-align: center;
+margin: 0;
+font-weight: bold;
+color: blue;
+}
+
+h2 {
+padding: 1rem;
+text-align: center;
+margin: 0;
+font-weight: bold;
+color: blue;
+
+}
+.child-selector {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.toggle {
+display: flex;
+justify-content: right;
+align-items: center;
+}
+
+ul {
+padding: 1rem;
+text-align: center;
+margin: 0;
+font-weight: bold;
+color: black;
+}
+
+.immune-display {
+background: rgba(179, 174, 174, 0.68);
+background-size: cover;
+border-radius: 10px;
+box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+height: 400px;
+width: 600px;
+overflow: hidden;
+padding-top: 10px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.immune-content {
+text-align: center;
+font-weight: bold;
+color: black;
+}
+button {
+font-size: 17px;
+padding: 0.5em 2em;
+border: transparent;
+box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+background: dodgerblue;
+color: white;
+border-radius: 4px;
+}
+button:hover {
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+button:active {
+transform: translate(0em, 0.2em);
+}

@@ -3,12 +3,15 @@ import ChildAgeSelector from './ChildAgeSelector';
 import ImmunizationDisplay from './ImmunizationDisplay';
 import DarkModeToggle from './DarkModeToggle';
 import Header from "./Header";
-import './App.css';
+import Landing from './Landing';
+import './App.css'; 
 
 const App = () => {
   const [selectedAge, setSelectedAge] = useState(1);
   const [immunizationData, setImmunizationData] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [showLanding, setShowLanding] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +23,6 @@ const App = () => {
         console.error('Error fetching data:', error);
       }
     };
-
     fetchData();
   }, []);
 
@@ -28,23 +30,42 @@ const App = () => {
     setIsDarkMode(newMode);
   };
 
+  const handleEnterButtonClick = () => {
+    setShowWelcome(false);
+    setShowLanding(true);
+  };
+
   return (
     <div className={isDarkMode ? 'dark-mode' : ''}>
       <DarkModeToggle isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeChange} />
-      {immunizationData ? (
+      <br></br>
+      {showWelcome && (
+        <section id="welcome">
+        <h1>Hi There, Welcome to Immunizer App</h1>
+        <h2>Press Enter to Check the Status of your Child</h2>
+          <button id="enterButton" onClick={handleEnterButtonClick}>
+            Enter
+          </button>
+          <br></br>
+        </section>
+      )}
+
+{showLanding && immunizationData && (
         <>
           <Header isLoggedIn={true} />
           <ChildAgeSelector onSelect={(age) => setSelectedAge(age)} />
           <ImmunizationDisplay selectedAge={selectedAge} immunizationData={immunizationData} />
+          <Landing />
         </>
-      ) : (
-        <p>Loading immunization data...</p>
       )}
+
+      {!immunizationData && <p>Loading immunization data...</p>}
     </div>
   );
 };
 
 export default App;
+
 
 
 
