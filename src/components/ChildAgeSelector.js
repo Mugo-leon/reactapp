@@ -17,7 +17,7 @@ const ChildAgeSelector = ({ onSelect }) => {
   };
 
   return (
-    <div>
+    <div className='child-selector'>
       <label>
         Select Child's Age:
         <select value={selectedAge} onChange={handleAgeSelect}>

@@ -1,10 +1,11 @@
-/* App.css */
+
 
 body {
   font-family: 'Arial', sans-serif;
   transition: background-color 0.5s, color 0.5s;
-  background-image: url(/Users/winnie/reactapp/src/components/baby.png);
+  background-image: url(/home/leon/Development/code/phase2/reactapp/src/components/baby.png);
   background-size: auto;
+  background-repeat: no-repeat;
 }
 
 .dark-mode {
@@ -35,7 +36,7 @@ justify-content: center;
 align-items: center;
 border-radius: 20px;
 }
-/* Add additional styles as needed */
+
 h1 {
 padding: 1rem;
 text-align: center;

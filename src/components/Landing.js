@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Landing= () => {
+const LandingJs = () => {
   const [showWelcome, setShowWelcome] = useState(true);
   const [showLandingPage, setShowLandingPage] = useState(false);
 
@@ -25,4 +25,4 @@ const Landing= () => {
   );
 };
 
-export default Landing;
+export default LandingJs;

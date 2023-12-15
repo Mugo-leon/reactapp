@@ -3,7 +3,7 @@ import ChildAgeSelector from './ChildAgeSelector';
 import ImmunizationDisplay from './ImmunizationDisplay';
 import DarkModeToggle from './DarkModeToggle';
 import Header from "./Header";
-import Landing from './Landing';
+import LandingJs from './Landing';
 import './App.css'; 
 
 const App = () => {
@@ -32,7 +32,7 @@ const App = () => {
 
   const handleEnterButtonClick = () => {
     setShowWelcome(false);
-    setShowLanding(true);
+    setShowLanding(true); 
   };
 
   return (
@@ -55,7 +55,8 @@ const App = () => {
           <Header isLoggedIn={true} />
           <ChildAgeSelector onSelect={(age) => setSelectedAge(age)} />
           <ImmunizationDisplay selectedAge={selectedAge} immunizationData={immunizationData} />
-          <Landing />
+          <LandingJs />
+          
         </>
       )}
 
