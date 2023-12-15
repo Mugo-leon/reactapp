@@ -3,27 +3,27 @@
       {
         "id": 1,
         "name": "BCG (Bacillus Calmette-Guérin) - protects against tuberculosis\nOPV (Oral Polio Vaccine) - protects against polio\nHepatitis B",
-        "prior_immunization": "N/A"
+        "next_immunization": "In 6 weeks, next immunization is: OPV and IPV (Inactivated Polio Vaccine)\nDTP-HB-Hib-HepB (Diphtheria, Tetanus, Pertussis, Hepatitis B, Haemophilus influenzae type b)\nPCV (Pneumococcal Conjugate Vaccine)\nRV (Rotavirus)"
       },
       {
         "id": 2,
         "name": "OPV and IPV (Inactivated Polio Vaccine)\nDTP-HB-Hib-HepB (Diphtheria, Tetanus, Pertussis, Hepatitis B, Haemophilus influenzae type b)\nPCV (Pneumococcal Conjugate Vaccine)\nRV (Rotavirus)",
-        "prior_immunization": "BCG (Bacillus Calmette-Guérin) - protects against tuberculosis\nOPV (Oral Polio Vaccine) - protects against polio\nHepatitis B"
+        "next_immunization": "In 4 weeks, next immunization is: OPV and IPV\nDTP-HB-Hib-HepB\nPCV"
       },
       {
         "id": 3,
         "name": "OPV and IPV\nDTP-HB-Hib-HepB\nPCV",
-        "prior_immunization": "OPV and IPV (Inactivated Polio Vaccine)\nDTP-HB-Hib-HepB (Diphtheria, Tetanus, Pertussis, Hepatitis B, Haemophilus influenzae type b)\nPCV (Pneumococcal Conjugate Vaccine)\nRV (Rotavirus)"
+        "next_immunization": "In 4 weeks, next immunization is: OPV and IPV\nDTP-HB-Hib-HepB\nPCV\nRV"
       },
       {
         "id": 4,
         "name": "OPV and IPV\nDTP-HB-Hib-HepB\nPCV\nRV",
-        "prior_immunization": "OPV and IPV\nDTP-HB-Hib-HepB\nPCV"
+        "next_immunization": "In 10 weeks, next immunization is: OPV and IPV\nDTP-HB-Hib-HepB\nPCV\nRV\nInfluenza (annually)\nA"
       },
       {
         "id": 5,
         "name": "OPV and IPV\nDTP-HB-Hib-HepB\nPCV\nRV\nInfluenza (annually)\nA",
-        "prior_immunization": "OPV and IPV\nDTP-HB-Hib-HepB\nPCV\nRV"
+        "next_immunization": "N/A"
       }
     ]
   }

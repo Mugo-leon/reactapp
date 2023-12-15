@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const ImmunizationDisplay = ({ selectedAge, immunizationData }) => {
   const [recommendedImmunizations, setRecommendedImmunizations] = useState([]);
-  const [priorImmunization, setPriorImmunization] = useState('');
+  const [nextImmunization, setNextImmunization] = useState('');
 
   useEffect(() => {
     // Find the immunization data based on the selected age
@@ -12,10 +12,10 @@ const ImmunizationDisplay = ({ selectedAge, immunizationData }) => {
 
     // Extract recommended immunizations and prior immunization from the selected data
     const recommended = selectedImmunization ? selectedImmunization.name.split('\n') : [];
-    const prior = selectedImmunization ? selectedImmunization.prior_immunization : '';
+    const prior = selectedImmunization ? selectedImmunization.next_immunization : '';
 
     setRecommendedImmunizations(recommended);
-    setPriorImmunization(prior);
+    setNextImmunization(prior);
   }, [selectedAge, immunizationData]);
 
   return (
@@ -28,8 +28,8 @@ const ImmunizationDisplay = ({ selectedAge, immunizationData }) => {
         ))}
       </ul>
 
-      <h2>Prior Immunization:</h2>
-      <p className = "immune-content">{priorImmunization}</p>
+      <h2>Next Immunization:</h2>
+      <p className = "immune-content">{nextImmunization}</p>
       
     </div>
     
