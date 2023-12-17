@@ -1,17 +1,15 @@
 import React from 'react';
 
-const HomePage = ({ showWelcome, showLanding, immunizationData, handleEnterButtonClick }) => {
+const HomePage = ({ showWelcome, immunizationData, handleEnterButtonClick }) => {
   return (
     <div>
       {showWelcome && (
         <section id="welcome">
-          {/* ... existing code ... */}
         </section>
       )}
 
-      {showLanding && immunizationData && (
+      {immunizationData && (
         <>
-          {/* ... existing code ... */}
         </>
       )}
 

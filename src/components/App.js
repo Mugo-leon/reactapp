@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import ChildAgeSelectorPage from './ChildAgeSelectorPage';
 import ImmunizationDisplayPage from './ImmunizationDisplayPage';
 import DarkModeToggle from './DarkModeToggle';
-import HomePage from './HomePage';
-import LandingJs from './Landing';  // Assuming you have this component
-import Header from './Header';      // Assuming you have this component
+import HomePage from './HomePage'; 
+import Header from './Header';      
 import './App.css';
 
 const App = () => {
@@ -45,13 +44,13 @@ const App = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" className="button-link">Home</Link>
             </li>
             <li>
-              <Link to="/child-age-selector">Child Age Selector</Link>
+              <Link to="/child-age-selector"className="button-link">Child Age Selector</Link>
             </li>
             <li>
-              <Link to="/immunization-display">Immunization Display</Link>
+              <Link to="/immunization-display"className="button-link">Immunization Display</Link>
             </li>
           </ul>
         </nav>
@@ -63,13 +62,10 @@ const App = () => {
 
           <Route path="/immunization-display" element={<ImmunizationDisplayPage selectedAge={selectedAge} immunizationData={immunizationData} />} />
         </Routes>
-
-        {showLanding && <LandingJs />}
-        <Header /> {/* Include Header component */}
+        <Header />
       </div>
     </Router>
   );
 };
 
 export default App;
-
