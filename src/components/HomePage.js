@@ -5,6 +5,8 @@ const HomePage = ({ showWelcome, immunizationData, handleEnterButtonClick }) => 
     <div>
       {showWelcome && (
         <section id="welcome">
+          <h1>Welcome to Immunizer Scheduler!</h1>
+          <p>Just like the way computers need updates and anti-viruses to prevent attacks from malware, our little ones need protection from biological viruses. Let Immunizer Scheduler help you keep track of your child's immunization schedule.</p>
         </section>
       )}
 
@@ -19,3 +21,4 @@ const HomePage = ({ showWelcome, immunizationData, handleEnterButtonClick }) => 
 };
 
 export default HomePage;
+
