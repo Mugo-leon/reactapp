@@ -12,10 +12,10 @@ const ImmunizationDisplay = ({ selectedAge, immunizationData }) => {
 
     // Extract recommended immunizations and prior immunization from the selected data
     const recommended = selectedImmunization ? selectedImmunization.name.split('\n') : [];
-    const prior = selectedImmunization ? selectedImmunization.next_immunization : '';
+    const next = selectedImmunization ? selectedImmunization.next_immunization : '';
 
     setRecommendedImmunizations(recommended);
-    setNextImmunization(prior);
+    setNextImmunization(next);
   }, [selectedAge, immunizationData]);
 
   return (
