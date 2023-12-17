@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import ChildAgeSelector from './ChildAgeSelector';
-import ImmunizationDisplay from './ImmunizationDisplay';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import ChildAgeSelectorPage from './ChildAgeSelectorPage';
+import ImmunizationDisplayPage from './ImmunizationDisplayPage';
 import DarkModeToggle from './DarkModeToggle';
-import Header from "./Header";
-import LandingJs from './Landing';
-import './App.css'; 
+import HomePage from './HomePage';
+import LandingJs from './Landing';  // Assuming you have this component
+import Header from './Header';      // Assuming you have this component
+import './App.css';
 
 const App = () => {
   const [selectedAge, setSelectedAge] = useState(1);
@@ -32,48 +34,42 @@ const App = () => {
 
   const handleEnterButtonClick = () => {
     setShowWelcome(false);
-    setShowLanding(true); 
+    setShowLanding(true);
   };
 
   return (
-    <div className={isDarkMode ? 'dark-mode' : ''}>
-      <DarkModeToggle isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeChange} />
+    <Router>
+      <div className={isDarkMode ? 'dark-mode' : ''}>
+        <DarkModeToggle isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeChange} />
 
-      {showWelcome && (
-        <section id="welcome">
-        <h1>Hi There, Welcome to Immunizer App</h1>
-        <h2>Press Enter to Check the Status of your Child</h2>
-          <button id="enterButton" onClick={handleEnterButtonClick}>
-            Enter
-          </button>
-          <br></br>
-        </section>
-      )}
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/child-age-selector">Child Age Selector</Link>
+            </li>
+            <li>
+              <Link to="/immunization-display">Immunization Display</Link>
+            </li>
+          </ul>
+        </nav>
 
-{showLanding && immunizationData && (
-        <>
-          <Header isLoggedIn={true} />
-          <ChildAgeSelector onSelect={(age) => setSelectedAge(age)} />
-          <ImmunizationDisplay selectedAge={selectedAge} immunizationData={immunizationData} />
-          {showWelcome && <LandingJs />} 
-        </>
-      )}
+        <Routes>
+          <Route path="/" element={<HomePage showWelcome={showWelcome} showLanding={showLanding} immunizationData={immunizationData} handleEnterButtonClick={handleEnterButtonClick} />} />
 
-      {!immunizationData && <p>Loading immunization data...</p>}
-      
+          <Route path="/child-age-selector" element={<ChildAgeSelectorPage onSelect={(age) => setSelectedAge(age)} />} />
 
-    </div>
+          <Route path="/immunization-display" element={<ImmunizationDisplayPage selectedAge={selectedAge} immunizationData={immunizationData} />} />
+        </Routes>
+
+        {showLanding && <LandingJs />}
+        <Header /> {/* Include Header component */}
+      </div>
+    </Router>
   );
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
 
