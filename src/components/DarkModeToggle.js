@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
 const DarkModeToggle = () => {
   // Check local storage for the saved dark mode preference
   const savedDarkMode = localStorage.getItem('darkMode');
@@ -21,15 +20,13 @@ const DarkModeToggle = () => {
   };
 
   return (
-    <div>
+    <div class = "toggle">
       <label>
         <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
-        Toggle Dark Mode
+        {isDarkMode ? 'Toggle Light Mode ☀️' : 'Toggle Dark Mode 🌙'}
       </label>
     </div>
   );
 };
 
 export default DarkModeToggle;
-
-
