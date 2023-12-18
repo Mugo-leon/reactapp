@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/Immunizations');
+        const response = await fetch('https://immunizer-scheduler-backend.onrender.com/Immunizations');
         const data = await response.json();
         setImmunizationData(data);
       } catch (error) {
